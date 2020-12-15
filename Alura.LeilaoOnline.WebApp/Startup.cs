@@ -22,10 +22,13 @@ namespace Alura.LeilaoOnline.WebApp
         public void ConfigureServices(IServiceCollection services)
         {
             var cnxString = Configuration.GetConnectionString("LeiloesDB");
+            var cnxStringContainer = Configuration.GetConnectionString("LeiloesDBContainer");
+
             services.AddDbContext<LeiloesContext>(options =>
             {
-                options.UseSqlServer(cnxString);
+                options.UseSqlServer(cnxStringContainer);
             });
+
             services.AddTransient<IModalidadeAvaliacao, MaiorValor>();
             services.AddTransient<IRepositorio<Leilao>, RepositorioLeilao>();
             services.AddTransient<IRepositorio<Interessada>, RepositorioInteressada>();

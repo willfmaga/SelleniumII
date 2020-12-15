@@ -29,7 +29,7 @@ namespace Alura.LeilaoOnline.Selenium.Test.PageObjects
                 .MoveToElement(linkLogout)
                 .Click()
                 .Build();
-
+            
             actions.Perform();
             
         }

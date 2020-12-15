@@ -10,6 +10,6 @@ namespace Alura.LeilaoOnline.Selenium.Test.Helpers
     {
 
         public static string PastaDoExecutavelDoDriver() =>
-             Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+            @"C:\Users\willi\Documents\Desenvolvimento\Diversos\chromedriver87";
     }
 }

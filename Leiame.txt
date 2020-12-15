@@ -2,3 +2,6 @@ https://www.gofpatterns.com/creational-design-patterns/creational-patterns/build
 
 https://seleniumhq.github.io/selenium/docs/api/dotnet/html/T_OpenQA_Selenium_Interactions_Actions.htm
 
+https://seleniumhq.github.io/selenium/docs/api/dotnet/html/T_OpenQA_Selenium_Support_UI_SelectElement.htm
+
+

@@ -7,19 +7,32 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace Alura.LeilaoOnline.WebApp.Dados.Migrations
+namespace Alura.LeilaoOnline.Dados.Migrations
 {
     [DbContext(typeof(LeiloesContext))]
-    [Migration("20190415192950_Usuarios")]
-    partial class Usuarios
+    [Migration("20201214200716_Inicial")]
+    partial class Inicial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "2.2.2-servicing-10034")
+                .HasAnnotation("ProductVersion", "2.2.6-servicing-10079")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+            modelBuilder.Entity("Alura.LeilaoOnline.Core.Favorito", b =>
+                {
+                    b.Property<int>("IdLeilao");
+
+                    b.Property<int>("IdInteressada");
+
+                    b.HasKey("IdLeilao", "IdInteressada");
+
+                    b.HasIndex("IdInteressada");
+
+                    b.ToTable("Favoritos");
+                });
 
             modelBuilder.Entity("Alura.LeilaoOnline.Core.Interessada", b =>
                 {
@@ -150,6 +163,19 @@ namespace Alura.LeilaoOnline.WebApp.Dados.Migrations
                             Email = "admin@example.org",
                             Senha = "123"
                         });
+                });
+
+            modelBuilder.Entity("Alura.LeilaoOnline.Core.Favorito", b =>
+                {
+                    b.HasOne("Alura.LeilaoOnline.Core.Interessada", "Seguidor")
+                        .WithMany("Favoritos")
+                        .HasForeignKey("IdInteressada")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("Alura.LeilaoOnline.Core.Leilao", "LeilaoFavorito")
+                        .WithMany("Seguidores")
+                        .HasForeignKey("IdLeilao")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("Alura.LeilaoOnline.Core.Lance", b =>

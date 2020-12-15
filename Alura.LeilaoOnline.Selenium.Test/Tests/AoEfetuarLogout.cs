@@ -1,9 +1,6 @@
 ﻿using Alura.LeilaoOnline.Selenium.Test.Fixtures;
 using Alura.LeilaoOnline.Selenium.Test.PageObjects;
 using OpenQA.Selenium;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using Xunit;
 
 namespace Alura.LeilaoOnline.Selenium.Test.Tests
@@ -31,7 +28,7 @@ namespace Alura.LeilaoOnline.Selenium.Test.Tests
 
             //act 
             dashboard.EfetuarLogout();
-
+  
             //assert 
             Assert.Contains("Próximos Leilões", driver.PageSource);
         }

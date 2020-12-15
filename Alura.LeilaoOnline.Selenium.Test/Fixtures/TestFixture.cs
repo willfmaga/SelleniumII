@@ -2,6 +2,7 @@
 using OpenQA.Selenium.Chrome;
 using System;
 using Alura.LeilaoOnline.Selenium.Test.Helpers;
+using OpenQA.Selenium.Firefox;
 
 namespace Alura.LeilaoOnline.Selenium.Test.Fixtures
 {
@@ -14,6 +15,7 @@ namespace Alura.LeilaoOnline.Selenium.Test.Fixtures
         public TestFixture()
         {
             Driver = new ChromeDriver(TestHelper.PastaDoExecutavelDoDriver());
+            Driver.Manage().Window.Maximize();
         }
 
         //Tear Down

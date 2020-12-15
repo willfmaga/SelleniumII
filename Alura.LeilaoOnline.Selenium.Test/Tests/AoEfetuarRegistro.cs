@@ -1,5 +1,5 @@
-﻿using Alura.LeilaoOnline.Selenium.Fixtures;
-using Alura.LeilaoOnline.Selenium.PageObjects;
+﻿using Alura.LeilaoOnline.Selenium.PageObjects;
+using Alura.LeilaoOnline.Selenium.Test.Fixtures;
 using OpenQA.Selenium;
 using Xunit;
 
