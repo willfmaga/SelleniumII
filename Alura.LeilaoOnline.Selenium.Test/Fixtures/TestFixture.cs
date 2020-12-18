@@ -14,7 +14,7 @@ namespace Alura.LeilaoOnline.Selenium.Test.Fixtures
         //Setup
         public TestFixture()
         {
-            Driver = new ChromeDriver(TestHelper.PastaDoExecutavelDoDriver());
+            Driver = new ChromeDriver(TestHelper.PastaDoExecutavelDoGoogleDriver87());
             Driver.Manage().Window.Maximize();
         }
 

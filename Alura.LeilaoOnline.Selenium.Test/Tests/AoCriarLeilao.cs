@@ -1,4 +1,5 @@
 ﻿using Alura.LeilaoOnline.Selenium.Test.Fixtures;
+using Alura.LeilaoOnline.Selenium.Test.Helpers;
 using Alura.LeilaoOnline.Selenium.Test.PageObjects;
 using OpenQA.Selenium;
 using System;
@@ -35,7 +36,7 @@ namespace Alura.LeilaoOnline.Selenium.Test.Tests
                                             "Leilao de motos antigas, com motorização acima de 500cc, placa preta",
                                             "Item de Colecionador",
                                             19000D,
-                                            @"C:\Users\willi\Pictures\hd-nght rod-2008-gd.jpg",
+                                            TestHelper.CaminhoCompletoArquivo(@"Imagens\HDDyna.jpg"),
                                             DateTime.Now.AddDays (20),
                                             DateTime.Now.AddDays(40));
 

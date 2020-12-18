@@ -21,16 +21,17 @@ namespace Alura.LeilaoOnline.Selenium.Test.Tests
         [Fact]
         public void DadoLoginInteressadaDeveMostrarPainelResultado()
         {
-            //act 
+            //arrange 
             var loginPO = new LoginPO(driver);
             loginPO.Visitar();
-            loginPO.PreencherFormulario("fulado@example.org", "123");
+            loginPO.PreencherFormulario("fulano@example.org", "123");
+
             loginPO.SubmeterFormulario();
 
             var dashboardInteressadaPO = new DashboardInteressadaPO(driver);
 
             //act
-            //dashboardInteressadaPO.PesquisarLeiloes(new List<string> {"Arte", "Coleções" });
+            dashboardInteressadaPO.PesquisarLeiloes(new List<string> { "Arte", "Coleções" });
 
             //assert
         }
