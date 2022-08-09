@@ -8,7 +8,7 @@ using Xunit;
 
 namespace Alura.LeilaoOnline.Selenium.Testes
 {
-    [Collection("MinhaCollection")]
+    [Collection("Chrome Driver")]
     public class AoEfetuarLogin
     {
         private IWebDriver driver;
@@ -25,6 +25,7 @@ namespace Alura.LeilaoOnline.Selenium.Testes
             var loginPO = new LoginPO(driver);
             loginPO.Visitar();
             loginPO.PreencheFormulario("fulano@example.org", "123");
+
 
             //act
             loginPO.SubmeteFormulario();

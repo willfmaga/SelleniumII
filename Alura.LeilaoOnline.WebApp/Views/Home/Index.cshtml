@@ -42,16 +42,7 @@
 
                         </div>
                         <div class="card-content">
-                            @{ if (leilao.Descricao.Length > 150)
-                                {
-                                    <p>@leilao.Descricao.Substring(0, 150)</p>
-
-                                }
-                                else
-                                {
-                                    <p>@leilao.Descricao.Substring(0, leilao.Descricao.Length)</p>
-                                }
-                            }
+                            <p>@leilao.Descricao.Substring(0, 150)</p>
                         </div>
                         <div class="card-action">
                             <a asp-action="Detalhes" asp-route-id="@leilao.Id">Detalhes</a>
