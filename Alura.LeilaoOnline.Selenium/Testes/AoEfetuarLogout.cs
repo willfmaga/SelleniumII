@@ -5,7 +5,7 @@ using Alura.LeilaoOnline.Selenium.PageObjects;
 
 namespace Alura.LeilaoOnline.Selenium.Testes
 {
-    [Collection("MinhaCollection")]
+    [Collection("Chrome Driver")]
     public class AoEfetuarLogout
     {
         private IWebDriver driver;

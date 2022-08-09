@@ -3,9 +3,9 @@ using Alura.LeilaoOnline.Selenium.PageObjects;
 using OpenQA.Selenium;
 using Xunit;
 
-namespace Alura.LeilaoOnline.Selenium.Test.Tests
+namespace Alura.LeilaoOnline.Selenium.Testes
 {
-    [Collection("MinhaCollection")]
+    [Collection("Chrome Driver")]
     public class AoEfetuarRegistro
     {
         private IWebDriver driver;

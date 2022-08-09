@@ -7,7 +7,7 @@ using Xunit;
 
 namespace Alura.LeilaoOnline.Selenium.Testes
 {
-    [Collection("MinhaCollection")]
+    [Collection("Chrome Driver")]
     public class AoNavegarParaHome
     {
         private IWebDriver driver;
