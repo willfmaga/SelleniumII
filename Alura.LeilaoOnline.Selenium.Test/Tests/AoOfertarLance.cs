@@ -26,21 +26,22 @@ namespace Alura.LeilaoOnline.Selenium.Test.Tests
             var loginPO = new LoginPO(driver);
             loginPO.Visitar();
             loginPO.PreencherFormulario("fulano@example.org", "123");
+            loginPO.SubmeterFormulario();
 
             var detalhePO = new DetalheLeilaoPO(driver);
             detalhePO.Visitar(1);//em andamento
 
             //act 
-            var wait1 = new WebDriverWait(driver, TimeSpan.FromSeconds(4));
-            wait1.Until(drv => detalhePO.ExisteInputValor == true);
+            //var wait1 = new WebDriverWait(driver, TimeSpan.FromSeconds(4));
+            //wait1.Until(drv => detalhePO.ExisteInputValor == true);
             detalhePO.OfertarLance(300);
 
 
             //arrange
             var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(8)); //criando um wait explicito
 
-            bool iguais = wait.Until(drv =>  detalhePO.LanceAtual == 300);
-            
+            bool iguais = wait.Until(drv => detalhePO.LanceAtual == 300d);
+
             Assert.True(iguais);
 
 

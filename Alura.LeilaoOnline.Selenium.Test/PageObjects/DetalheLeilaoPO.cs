@@ -44,6 +44,7 @@ namespace Alura.LeilaoOnline.Selenium.Test.PageObjects
 
         internal void OfertarLance(double valor)
          {
+            driver.FindElement(byInputValor).SendKeys(string.Empty);
             driver.FindElement(byInputValor).SendKeys(valor.ToString());
             driver.FindElement(byBotOfertar).Click();
         }
