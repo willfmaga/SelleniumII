@@ -15,6 +15,8 @@ namespace Alura.LeilaoOnline.Selenium.Test.Helpers
         public static string PastaDoExecutavelDoGoogleDriver87() =>
          Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), @"GoogleDrive\87");
 
+        public static string PastaDoExecutavelDoGoogleDriver103() =>
+           Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), @"GoogleDrive\103");
         public static string PastaDeExecucaoTeste() =>
             Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
 

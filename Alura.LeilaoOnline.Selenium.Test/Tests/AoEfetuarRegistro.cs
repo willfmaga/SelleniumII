@@ -37,7 +37,7 @@ namespace Alura.LeilaoOnline.Selenium.Test.Tests
         [InlineData("Daniel Portugal", "daniel", "123", "123")]
         [InlineData("Daniel Portugal", "daniel.portugal@caelum.com.br", "123", "456")]
         [InlineData("Daniel Portugal", "daniel.portugal@caelum.com.br", "123", "")]
-        public void DadoInfoinvalidasDeveContinuarNaHome(
+        public void DadoInfoInvalidasDeveContinuarNaHome(
             string nome,
             string email,
             string senha,

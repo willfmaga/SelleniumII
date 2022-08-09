@@ -14,8 +14,10 @@ namespace Alura.LeilaoOnline.Selenium.Test.Fixtures
         //Setup
         public TestFixture()
         {
-            Driver = new ChromeDriver(TestHelper.PastaDoExecutavelDoGoogleDriver87());
+            Driver = new ChromeDriver(TestHelper.PastaDoExecutavelDoGoogleDriver103());
             Driver.Manage().Window.Maximize();
+            //Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10); //implicito para todos os find elements
+            //Driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(4);
         }
 
         //Tear Down
