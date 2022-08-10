@@ -17,21 +17,47 @@ namespace Alura.LeilaoOnline.Selenium.PageObjects
             byBotaoLogin = By.Id("btnLogin");
         }
 
-        public void Visitar()
+        public LoginPO Visitar()
         {
             driver.Navigate().GoToUrl("http://localhost:5000/Autenticacao/Login");
+            return this;
         }
 
-        public void PreencheFormulario(string login, string senha)
+        public LoginPO PreencheFormulario(string login, string senha)
         {
-            driver.FindElement(byInputLogin).SendKeys(login);
-            driver.FindElement(byInputSenha).SendKeys(senha);
+            return InformarEmail(login)
+                .InformarSenha(senha);
+            
         }
 
-        public void SubmeteFormulario()
+        public LoginPO SubmeteFormulario()
         {
             driver.FindElement(byBotaoLogin).Submit();
+            return this;
         }
 
+        public void EfetuarLoginComCredenciais(string login, string senha)
+        {
+            Visitar()
+                .PreencheFormulario(login, senha)
+                .SubmeteFormulario();
+        }
+
+        public LoginPO InformarEmail(string login)
+        {
+            driver.FindElement(byInputLogin).SendKeys(login);
+            return this;
+        }
+
+        public LoginPO InformarSenha(string senha)
+        {
+            driver.FindElement(byInputSenha).SendKeys(senha);
+            return this;
+        }
+
+        public LoginPO EfetuarLogin()
+        {
+            return SubmeteFormulario();
+        }
     }
 }

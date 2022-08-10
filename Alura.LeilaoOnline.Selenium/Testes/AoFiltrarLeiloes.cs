@@ -1,6 +1,7 @@
 ﻿using Alura.LeilaoOnline.Selenium.Fixtures;
 using Alura.LeilaoOnline.Selenium.PageObjects;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -22,20 +23,23 @@ namespace Alura.LeilaoOnline.Selenium.Testes
         public void DadoLoginInteressadaDeveMostrarPainelResultado()
         {
             //arrange
-            var loginPO = new LoginPO(driver);
-            loginPO.Visitar();
-            loginPO.PreencheFormulario("fulano@example.org", "123");
-            loginPO.SubmeteFormulario();
+            new LoginPO(driver).
+                EfetuarLoginComCredenciais("fulano@example.org", "123");
+  
 
             var dashboardInteressadaPO = new DashboardInteressadaPO(driver);
 
             //act
-            dashboardInteressadaPO.PesquisarLeiloes(
+            dashboardInteressadaPO.Filtro.PesquisarLeiloes(
                 new List<string> { "Arte", "Coleções" },
+                //new List<string> { "Arte"},
                 "",
                 true);
 
             //assert
+            var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(8));
+            wait.Until(drv => drv.PageSource.Contains("Resultado da pesquisa"));
+
             Assert.Contains("Resultado da pesquisa", driver.PageSource);
 
         }

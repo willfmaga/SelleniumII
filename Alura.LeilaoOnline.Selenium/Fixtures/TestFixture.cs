@@ -16,6 +16,7 @@ namespace Alura.LeilaoOnline.Selenium.Fixtures
         {
             Driver = new ChromeDriver(TestHelper.PastaDoChromeDrive103);
             //Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);//wait implicito
+            Driver.Manage().Window.Maximize();
         }
 
         //TearDown

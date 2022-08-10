@@ -1,8 +1,10 @@
 ﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 
 namespace Alura.LeilaoOnline.Selenium.Helpers
 {
@@ -38,6 +40,8 @@ namespace Alura.LeilaoOnline.Selenium.Helpers
             OpenWrapper();
             opcoes.ToList().ForEach(o =>
             {
+                var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(3));
+                wait.Until(ExpectedConditions.ElementToBeClickable(o));
                 o.Click();
             });
             LoseFocus();
@@ -51,8 +55,30 @@ namespace Alura.LeilaoOnline.Selenium.Helpers
                 .ToList()
                 .ForEach(o =>
                 {
+                    var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(3));
+                    wait.Until(ExpectedConditions.ElementToBeClickable(o));
+
                     o.Click();
                 });
+            LoseFocus();
+        }
+
+        public void SelectByText(List<string> options)
+        {
+            OpenWrapper();
+            
+            foreach (var option in options)
+            {
+                opcoes
+                    .Where(o => o.Text.Contains(option))
+                    .ToList()
+                    .ForEach(o =>
+                    {
+                        o.Click();
+                    });
+
+            }
+
             LoseFocus();
         }
     }

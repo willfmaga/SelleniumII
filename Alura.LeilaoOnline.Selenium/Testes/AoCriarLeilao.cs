@@ -5,6 +5,8 @@ using Alura.LeilaoOnline.Selenium.PageObjects;
 using Alura.LeilaoOnline.Selenium.Fixtures;
 using System.Threading;
 using System.Linq;
+using System.IO;
+using Alura.LeilaoOnline.Selenium.Helpers;
 
 namespace Alura.LeilaoOnline.Selenium.Testes
 {
@@ -34,7 +36,7 @@ namespace Alura.LeilaoOnline.Selenium.Testes
                 "Nullam aliquet condimentum elit vitae volutpat. Vivamus ut nisi venenatis, facilisis odio eget, lobortis tortor. Cras mattis sit amet dolor id bibendum. Nulla turpis justo, porttitor eget leo vel, dictum tempor diam. Sed dui arcu, feugiat nec placerat ac, suscipit a mi. Etiam eget risus et tellus placerat tincidunt at ut lorem.",
                 "Item de Colecionador",
                 4000,
-                "c:\\imagens\\colecao1.jpg",
+                Path.Combine(TestHelper.PastaDoExecutavel, @"Imagens\mirage.jpg"),
                 DateTime.Now.AddDays(20),
                 DateTime.Now.AddDays(40)
             );
